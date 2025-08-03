@@ -1,3 +1,5 @@
 /target
 
 bpe_model.txt
+bpe_merges.json
+vocab.json
