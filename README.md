@@ -65,23 +65,22 @@ fn main() -> io::Result<()> {
 Running `cargo run` will produce output similar to:
 
 ```text
-Training BPE model with text: hello world hello there hello everyone
+Training BPE model with text: Jack embraced beauty through art and life.
 Text to encode: hello world
-Encoded token IDs: [14, 28]
-Decoded text: helloworld
-Vocabulary size: 29
-Learned merges: [("h", "e"), ("l", "l"), ("he", "ll"), ("hell", "o"), ("r", "y"), ("r", "e"), ("v", "e"), ("n", "e"), ("ry", "o"), ("r", "l"), ("e", "ve"), ("eve", "ryo"), ("he", "re"), ("rl", "d"), ("everyo", "ne"), ("t", "here"), ("w", "o"), ("wo", "rld")]
-Model saved to: bpe_model.txt
-Model loaded from: bpe_model.txt
-Re-encoded token IDs (after loading): [14, 28]
-Re-decoded text (after loading): helloworld
+Encoded token IDs: [15, 121, 52, 52, 65, 22, 29, 65, 54, 52, 114]
+Decoded text: hello world
+Vocabulary size: 168
+Learned merges: 38
+Model saved to: vocab.json and bpe_merges.json
+Model loaded from: vocab.json and bpe_merges.json
+Re-encoded token IDs (after loading): [15, 121, 52, 52, 65, 22, 29, 65, 54, 52, 114]
+Re-decoded text (after loading): hello world
 ```
 
 ---
 
 ## 📚 Notes
 * Includes error handling for file operations and unknown characters.
-* Vocabulary and merge rules are persisted to `bpe_model.txt` for reuse.
 * For production use, consider:
   * Adding more tests
   * Optimizing for large datasets
